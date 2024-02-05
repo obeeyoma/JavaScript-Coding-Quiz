@@ -26,6 +26,18 @@ let questionNumber = 0;
 // Variable for timer
 let updateTimer;
 
+// Function to start quiz
+function startQuiz() {
+  // hide `startScreen`
+  hideStartScreen();
+  // show `questionScreen`
+  showQuestionScreen();
+  // start timer
+  countDown();
+  //
+  getQuestion();
+}
+
 // Timer function
 function countDown() {
   // setinterval
