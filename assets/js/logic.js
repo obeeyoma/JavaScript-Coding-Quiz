@@ -10,3 +10,18 @@ const startQuizButton = document.getElementById("start");
 const submitButton = document.getElementById("submit");
 const timerEl = document.getElementById("timer");
 let time = document.getElementById("time");
+
+//Listen for click events on buttons
+startQuizButton.addEventListener("click", startQuiz);
+submitButton.addEventListener("click", saveHighScore);
+
+// Audio elements
+const correctAudio = new Audio("./assets/sfx/correct.wav");
+const incorrectAudio = new Audio("./assets/sfx/incorrect.wav");
+
+// Variable to track time
+let timeCount = 50;
+// Variable to track question count
+let questionNumber = 0;
+// Variable for timer
+let updateTimer;
