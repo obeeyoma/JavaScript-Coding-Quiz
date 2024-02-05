@@ -87,6 +87,22 @@ function checkAnswer(choice) {
     }
   }, 200);
 }
+// Function to save score
+function saveHighScore() {
+  var initials = endScreen.querySelector("#initials");
+  if (initials.value == false) {
+    return;
+  }
+  var scores = {
+    initials: initials.value.trim(),
+    score: time.textContent,
+  };
+  initials.toUppercase();
+  localStorage.setItem(scores.initials, scores.score);
+
+  // Prevent multiple submissions
+  submitButton.disabled = true;
+}
 
 // Function to hide `startScreen`
 function hideStartScreen() {
