@@ -37,6 +37,16 @@ function startQuiz() {
   //
   getQuestion();
 }
+// Function to end quiz
+function endQuiz() {
+  // Set final score
+  finalScore.textContent = timeCount;
+  // clearInterval(updateTimer);
+  // Hide question screen
+  hideQuestionScreen();
+  // Show end screen
+  showEndScreen();
+}
 
 // Timer function
 function countDown() {
