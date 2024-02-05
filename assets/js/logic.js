@@ -61,6 +61,32 @@ function getQuestion() {
     choicesEl.appendChild(choiceButton);
   }
 }
+// Function to check answer
+function checkAnswer(choice) {
+  const currentQuestion = questions[questionNumber];
+
+  if (choice == currentQuestion.answer) {
+    feedback.textContent = "Correct!";
+    correctAudio.play();
+  } else {
+    feedback.textContent = "Wrong!";
+    incorrectAudio.play();
+    if (timeCount > 10) {
+      timeCount -= 10;
+    }
+  }
+  showFeedback();
+
+  setTimeout(function () {
+    hideFeedback();
+    questionNumber++;
+    if (questionNumber < questions.length) {
+      getQuestion();
+    } else {
+      endQuiz();
+    }
+  }, 200);
+}
 
 // Function to hide `startScreen`
 function hideStartScreen() {
