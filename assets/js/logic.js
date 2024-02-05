@@ -107,7 +107,7 @@ function checkAnswer(choice) {
     } else {
       endQuiz();
     }
-  }, 500);
+  }, 1000);
 }
 // Function to save score
 function saveHighScore() {
