@@ -122,9 +122,8 @@ function saveHighScore() {
 
     localStorage.setItem(scores.initials, scores.score);
 
-    // Prevent multiple submissions
-    submitButton.disabled = true;
-    initials.value = "";
+    // Go to highscores.html
+    location.assign("highscores.html");
   }
 }
 
