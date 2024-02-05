@@ -111,19 +111,21 @@ function checkAnswer(choice) {
 }
 // Function to save score
 function saveHighScore() {
-  var initials = endScreen.querySelector("#initials");
+  const initials = document.getElementById("initials");
   if (initials.value == false) {
     return;
-  }
-  var scores = {
-    initials: initials.value.trim(),
-    score: time.textContent,
-  };
-  initials.toUppercase();
-  localStorage.setItem(scores.initials, scores.score);
+  } else {
+    var scores = {
+      initials: initials.value.trim().toUpperCase(),
+      score: time.textContent,
+    };
 
-  // Prevent multiple submissions
-  submitButton.disabled = true;
+    localStorage.setItem(scores.initials, scores.score);
+
+    // Prevent multiple submissions
+    submitButton.disabled = true;
+    initials.value = "";
+  }
 }
 
 // Function to hide `startScreen`
