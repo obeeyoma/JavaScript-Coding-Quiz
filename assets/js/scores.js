@@ -16,7 +16,7 @@ function getScores() {
   // Add entries to list
   for (let k = 0; k < storageKeys.length; k++) {
     let eachScore = document.createElement("li");
-    eachScore.textContent = storageKeys[k].join(" ");
+    eachScore.textContent = storageKeys[k].join(" - ");
     highScores.appendChild(eachScore);
   }
 }
