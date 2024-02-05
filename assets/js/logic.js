@@ -115,7 +115,7 @@ function saveHighScore() {
   if (initials.value == false) {
     return;
   } else {
-    var scores = {
+    const scores = {
       initials: initials.value.trim().toUpperCase(),
       score: time.textContent,
     };
