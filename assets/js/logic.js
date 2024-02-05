@@ -26,6 +26,20 @@ let questionNumber = 0;
 // Variable for timer
 let updateTimer;
 
+// Timer function
+function countDown() {
+  // setinterval
+  updateTimer = setInterval(function () {
+    timeCount--;
+    time.textContent = timeCount;
+
+    if (timeCount == 0 || questionNumber === questions.length) {
+      clearInterval(updateTimer);
+      endQuiz();
+    }
+  }, 1000);
+}
+
 // Function to hide `startScreen`
 function hideStartScreen() {
   startScreen.classList.add("hide");
