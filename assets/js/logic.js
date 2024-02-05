@@ -50,12 +50,17 @@ function endQuiz() {
 
 // Timer function
 function countDown() {
-  // setinterval
+  // Setinterval
   updateTimer = setInterval(function () {
     timeCount--;
     time.textContent = timeCount;
 
-    if (timeCount == 0 || questionNumber === questions.length) {
+    if (
+      timeCount === 0 ||
+      questionNumber === questions.length ||
+      timeCount < 0 ||
+      timeCount < 10 // to prevent negative numbers
+    ) {
       clearInterval(updateTimer);
       endQuiz();
     }
