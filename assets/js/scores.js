@@ -1,6 +1,6 @@
 // Reference elements
-const highScores = document.querySelector("#highscores");
-const clearButton = document.querySelector("#clear");
+const highScores = document.getElementById("highscores");
+const clearButton = document.getElementById("clear");
 
 // Listen for click events on clearbutton
 clearButton.addEventListener("click", clearHighscores);
@@ -8,7 +8,7 @@ clearButton.addEventListener("click", clearHighscores);
 // Function to add scores to highscores board
 function getScores() {
   // Get items from local storage
-  var storageKeys = Object.entries(localStorage);
+  let storageKeys = Object.entries(localStorage);
   // Sort entries
   storageKeys.sort(function (a, b) {
     return b[1] - a[1];
