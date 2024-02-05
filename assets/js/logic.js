@@ -40,6 +40,28 @@ function countDown() {
   }, 1000);
 }
 
+// Function to populate question screen
+function getQuestion() {
+  // Set question content
+  questionTitle.textContent = questions[questionNumber].title;
+
+  choicesEl.innerHTML = "";
+  // Create buttons for choices
+  let questionChoices = questions[questionNumber].choices;
+
+  for (let j = 0; j < questionChoices.length; j++) {
+    let choiceButton = document.createElement("button");
+    choiceButton.setAttribute("textContent", "");
+    choiceButton.textContent = questions[questionNumber].choices[j];
+
+    choiceButton.addEventListener("click", function (e) {
+      checkAnswer(e.target.textContent);
+    });
+
+    choicesEl.appendChild(choiceButton);
+  }
+}
+
 // Function to hide `startScreen`
 function hideStartScreen() {
   startScreen.classList.add("hide");
