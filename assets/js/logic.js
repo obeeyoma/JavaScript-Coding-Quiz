@@ -25,3 +25,36 @@ let timeCount = 50;
 let questionNumber = 0;
 // Variable for timer
 let updateTimer;
+
+// Function to hide `startScreen`
+function hideStartScreen() {
+  startScreen.classList.add("hide");
+}
+// Function to hide `questionScreen`
+function hideQuestionScreen() {
+  questionScreen.classList.add("hide");
+}
+// Function to hide `endScreen`
+function hideEndScreen() {
+  endScreen.classList.add("hide");
+}
+// Function to hide `feedback`
+function hideFeedback() {
+  feedback.classList.add("hide");
+}
+// Function to show `startScreen`
+function showStartScreen() {
+  startScreen.classList.remove("hide");
+}
+// Function to show `questionScreen`
+function showQuestionScreen() {
+  questionScreen.classList.remove("hide");
+}
+// Function to show `endScreen`
+function showEndScreen() {
+  endScreen.classList.remove("hide");
+}
+// Function to show `feedback`
+function showFeedback() {
+  feedback.classList.remove("hide");
+}
