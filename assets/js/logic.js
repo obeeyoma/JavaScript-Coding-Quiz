@@ -55,12 +55,7 @@ function countDown() {
     timeCount--;
     time.textContent = timeCount;
 
-    if (
-      timeCount === 0 ||
-      questionNumber === questions.length ||
-      timeCount < 0 ||
-      timeCount < 10 // to prevent negative numbers
-    ) {
+    if (timeCount <= 0 || questionNumber === questions.length) {
       clearInterval(updateTimer);
       endQuiz();
     }
@@ -112,7 +107,7 @@ function checkAnswer(choice) {
     } else {
       endQuiz();
     }
-  }, 200);
+  }, 500);
 }
 // Function to save score
 function saveHighScore() {
